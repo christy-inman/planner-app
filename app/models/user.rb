@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+    require 'bcrypt'
     attr_accessor :username, :password_digest 
     has_secure_password
     validates :username, presence: true, uniqueness: true, length: { minimum: 3 } 

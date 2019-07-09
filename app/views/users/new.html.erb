@@ -1,15 +1,20 @@
 <h1>Create New Profile</h1>
 
+<% if @error %>
+    <p><%= @error %></p>
+<% end %>
+
 <%= form_for @user do |f| %>
     <p>Username:</p>
     <%= f.text_field :username %>
     <p>Password:</p>
-    <%= f.password_field :password_digest %>
+    <%= f.password_field :password %>
     <p>Confirm Password:</p>
-    <%= f.password_field :password_digest_confirmation %>
+    <%= f.password_field :password_confirmation %>
     <br><br>
     <%= f.submit "Create New Profile" %>
 <% end %>
+
 <% if @user.errors.any? %>
     <ul>
     <% for message_error in @user.errors.full_messages %>
@@ -18,3 +23,4 @@
     </ul>
 <% end %>
 
+ 

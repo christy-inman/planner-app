@@ -1,7 +1,6 @@
 <h1>Let's Get Planning!</h1>
 
-link_to "Sign Into Profile", 
-<br><br>
-<%= link_to "Create New Profile", new_user_url %>
-<br><br>
-link_to "Delete Profile",
+<%= button_to "Log Into Profile", sessions_login_path, method: :get %>
+<br>
+<%= button_to "Create New Profile", new_user_path, method: :get %>
+ 

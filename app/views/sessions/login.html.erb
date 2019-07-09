@@ -1,0 +1,15 @@
+<h1>Log Into Profile</h1>
+
+<% if @error %>
+    <p><%= @error %></p>
+<% end %>
+
+<%= form_tag(url: sessions_loginattempt_path ) do %>
+    <p>Username:</p>
+    <%= text_field_tag :login_username %>
+    <p>Password:</p>
+    <%= password_field_tag :login_password %>
+    <br><br>
+    <%= submit_tag "Log Into Profile" %>
+<% end %>
+

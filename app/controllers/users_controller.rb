@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-
+  before_action :save_login_state, only: [:login, :login_attempt]
+  
   def new
     @user = User.new
   end

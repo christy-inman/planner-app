@@ -1,5 +1,7 @@
 class SessionsController < ApplicationController
-  
+  before_action :authenticate_user, except: [:index, :login, :login_attempt, :new]
+  before_action :save_login_state, only: [:login, :login_attempt]  
+
   def login
   end
 

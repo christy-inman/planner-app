@@ -1,6 +1,4 @@
 class ApplicationController < ActionController::Base
-    before_action :authenticate_user, except: [:index, :login, :login_attempt, :new]
-    before_action :save_login_state, only: [:login, :login_attempt]
   
     def authenticate_user
         if session[:user_id]

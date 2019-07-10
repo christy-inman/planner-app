@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
     if @user && @user.authenticate(params[:user][:password])
       session[:user_id] = @user.id
       flash[:notice] = "Let's get planning, #{@user.username}!"
-      redirect_to show_profile_path
+      redirect_to profiles_path
     else
       flash.now.alert = "Invalid Login"
       render :login

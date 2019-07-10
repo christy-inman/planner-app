@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
 
     def save_login_state
         if session[:user_id]
-            redirect_to show_profile_path
+            redirect_to profiles_path
             return false
         else
             return true

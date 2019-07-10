@@ -7,11 +7,12 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    @user.username.downcase!
     if @user.save
       flash[:notice] = "Success! You created a new profile."
-      redirect_to user_path
+      redirect_to users_path
     else
-      @error = "Invalid entry."
+      flash.now.alert = "Invalid entry."
       render :new
     end
   end

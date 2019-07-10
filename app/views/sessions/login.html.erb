@@ -1,15 +1,12 @@
 <h1>Log Into Profile</h1>
 
-<% if @error %>
-    <p><%= @error %></p>
-<% end %>
-
-<%= form_tag(url: sessions_loginattempt_path ) do %>
-    <p>Username:</p>
-    <%= text_field_tag :login_username %>
-    <p>Password:</p>
-    <%= password_field_tag :login_password %>
+<%= form_for @user, url: {controller: 'sessions', action: 'login_attempt'} do |f| %>
+    <%= f.label :username %>
+    <%= f.text_field :username %>
     <br><br>
-    <%= submit_tag "Log Into Profile" %>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+    <br><br>
+    <%= f.submit "Log Into Profile" %>
 <% end %>
 

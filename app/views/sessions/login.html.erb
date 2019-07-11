@@ -1,13 +1,25 @@
+<div class="fullCard"> 
+<div class="cardContent">
 <h1>Log Into Profile</h1>
 
 <%= form_for @user, url: {controller: 'sessions', action: 'login_attempt'} do |f| %>
-    <%= f.label :username %>
+    <p>Username:</p>
     <%= f.text_field :username %>
-    <br><br>
-    <%= f.label :password %>
+    <br>
+    <p>Password:</p>
     <%= f.password_field :password %>
     <br><br>
     <%= f.submit "Log Into Profile" %>
 <% end %>
 <br><br>
 <%= link_to "Create New Profile", new_user_path %>
+
+<% if @user.errors.any? %>
+    <ul>
+    <% for message_error in @user.errors.full_messages %>
+        <li>* <%= message_error %>
+    <% end %>
+    </ul>
+<% end %>
+</div>
+</div>

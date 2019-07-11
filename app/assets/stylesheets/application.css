@@ -13,3 +13,39 @@
  *= require_tree .
  *= require_self
  */
+
+/* @font-face{
+    font-family: 'Noto Sans KR', sans-serif;
+    src: url('/assets/fonts/Noto_Sans_KR.otf');
+} */
+
+ body{
+     background: #FBECE4;
+ }
+
+ .fullCard{
+     width: 30vh;
+     height: 45vh;
+     border: 1px, black;
+     border-radius: 9%;
+     margin: 5%;
+     padding: 5%;
+     background: #FBFBFC;
+     text-align: justify;
+ }
+
+ .cardContent{
+     height: 100%;
+     width: 100%;
+     padding: 5%;
+     color: rgb(18, 26, 131);
+ }
+
+ .button{
+     background-color: #FBECE4;
+     border-radius: 3%;
+     color: rgb(18, 26, 131);
+     text-align: center;
+     padding: 2%;
+     font-size: 15px;
+ }

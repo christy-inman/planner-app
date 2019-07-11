@@ -1,3 +1,7 @@
 <%= link_to "Home Page", users_path %>
-<%= link_to "Profile", profiles_path %>
-<%= link_to "Logout", sessions_destroy_path(@current_user), method: :delete %>
+<% if @user && @user.id %>
+    <%= link_to "Profile", profiles_path %>
+    <%= link_to "Logout", sessions_destroy_path(@current_user), method: :delete %>
+<% else %>
+    <%= link_to "Log In", sessions_login_path %>
+<% end %>

@@ -6,8 +6,8 @@
 <br>
 <%#= button_to "View Full Schedule", schedule_path, method: :get %>
 <br>
-<%= button_to "See Your Usage Stats", profile_path(@current_user), method: :get %>
+<%= button_to "See Your Usage Stats", profile_path(@user), method: :get %>
 <br>
-<%= button_to "Logout of Your Profile", sessions_destroy_path(@current_user), method: :delete %>
+<%= button_to "Logout of Your Profile", sessions_destroy_path(@user), method: :delete %>
 <br>
-<%= button_to "Delete Your Profile", profile_path(@current_user), method: :delete %>
+<%= button_to "Delete Your Profile", profile_path(@user), method: :delete %>

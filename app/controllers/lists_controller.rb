@@ -1,4 +1,5 @@
 class ListsController < ApplicationController
+    before_action :get_user
     before_action :find_list, only: [:show, :edit, :update, :destroy]
 
     def index

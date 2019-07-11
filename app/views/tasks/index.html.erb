@@ -1,6 +1,10 @@
-<h2>Tasks</h2>
-<% @tasks.each do |task| %>
-   <ul>
-    <%= task.description %>
-    </ul>
-<% end %>
+<div class="fullCard"> 
+    <div class="cardContent">
+        <h1>Tasks</h1>
+        <% @tasks.each do |task| %>
+        <ul>
+            <%= task.description %>
+            </ul>
+        <% end %>
+    </div>
+</div>

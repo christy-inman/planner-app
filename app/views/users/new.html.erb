@@ -1,25 +1,25 @@
 <div class="fullCard"> 
-<div class="cardContent">
-<h1>Create New Profile</h1>
+    <div class="cardContent">
+        <h1>Create New Profile</h1>
 
-<%= form_for @user do |f| %>
-    <p>Username:</p>
-    <%= f.text_field :username %>
-    <p>Password:</p>
-    <%= f.password_field :password %>
-    <p>Confirm Password:</p>
-    <%= f.password_field :password_confirmation %>
-    <br><br>
-    <%= f.submit "Create New Profile" %>
-<% end %>
+        <%= form_for @user do |f| %>
+            <p>Username:</p>
+            <%= f.text_field :username %>
+            <p>Password:</p>
+            <%= f.password_field :password %>
+            <p>Confirm Password:</p>
+            <%= f.password_field :password_confirmation %>
+            <br><br>
+            <%= f.submit "Create New Profile" %>
+        <% end %>
 
-<% if @user.errors.any? %>
-    <ul>
-    <% for message_error in @user.errors.full_messages %>
-        <li>* <%= message_error %>
-    <% end %>
-    </ul>
-<% end %>
-</div>
+        <% if @user.errors.any? %>
+            <ul>
+            <% for message_error in @user.errors.full_messages %>
+                <li>* <%= message_error %>
+            <% end %>
+            </ul>
+        <% end %>
+    </div>
 </div>
  

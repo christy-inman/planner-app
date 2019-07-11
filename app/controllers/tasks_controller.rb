@@ -1,4 +1,5 @@
 class TasksController < ApplicationController
+    before_action :get_user
     before_action :find_task, only: [:show, :edit, :update]
 
     def index

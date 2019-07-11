@@ -1,16 +1,20 @@
-<h2><%= @list.title %></h2> <br><br>
+<div class="fullCard"> 
+    <div class="cardContent">
+        <h1><%= @list.title %></h1> 
 
-<% @list.tasks.each do |task| %>
-<p> <input type= "checkbox" >
-   
-   <strong><%= task.name %></strong><br>
+        <% @list.tasks.each do |task| %>
+        <p> <input type= "checkbox" >
+        
+        <strong><%= task.name %></strong><br>
 
-    <span style="padding-left:2em"> 
-    <%= task.description%>
-    </span><br>
+            <span style="padding-left:2em"> 
+            <%= task.description%>
+            </span><br>
 
-</p>
+        </p>
 
-<% end %>
+        <% end %>
 
-<%= button_to "Create task", new_task_path, method: :get  %>
+        <%= button_to "Create task", new_task_path, method: :get  %>
+    </div>
+</div>

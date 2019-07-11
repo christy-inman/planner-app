@@ -6,4 +6,7 @@ Rails.application.routes.draw do
   resources :users
   resources :profiles
   root 'users#index'
+
+  resources :tasks
+  resources :lists
 end

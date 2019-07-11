@@ -1,5 +1,7 @@
+
 <div class="fullCard"> 
 <div class="cardContent">
+
 <h1>Your Profile</h1>
 
 <%#= button_to "Create a New List", new_list_path, method: :get %>
@@ -12,6 +14,7 @@
 <br>
 <%= button_to "Logout of Your Profile", sessions_destroy_path(@user), method: :delete %>
 <br>
+
 <%= button_to "Delete Your Profile", profile_path(@user), method: :delete %>
 </div>
 </div>

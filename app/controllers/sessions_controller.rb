@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  before_action :authenticate_user, except: [:index, :login, :login_attempt, :new]
+  before_action :get_user, except: [:index, :login, :login_attempt, :new]
   before_action :save_login_state, only: [:login, :login_attempt]  
 
   def login
@@ -20,7 +20,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    session.delete :user_id
+    session.delete(:user_id)
     redirect_to sessions_login_path, notice: "Logged out!"
   end
 

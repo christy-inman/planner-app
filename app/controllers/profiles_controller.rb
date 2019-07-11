@@ -1,7 +1,7 @@
 class ProfilesController < ApplicationController
+    before_action :get_user
 
     def index
-        # @user = User.find_by(user_id)
     end
 
     def show

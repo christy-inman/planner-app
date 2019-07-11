@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  before_action :authenticate_user, except: [:index, :login, :login_attempt, :new]
+  before_action :get_user, except: [:index, :login, :login_attempt, :new]
   before_action :save_login_state, only: [:login, :login_attempt]  
 
   def login
@@ -12,15 +12,16 @@ class SessionsController < ApplicationController
     if @user && @user.authenticate(params[:user][:password])
       session[:user_id] = @user.id
       flash[:notice] = "Let's get planning, #{@user.username}!"
-      redirect_to show_profile_path
+      redirect_to profiles_path
     else
       flash.now.alert = "Invalid Login"
+      @user = User.new
       render :login
     end
   end
 
   def destroy
-    session.delete :user_id
+    session.delete(:user_id)
     redirect_to sessions_login_path, notice: "Logged out!"
   end
 

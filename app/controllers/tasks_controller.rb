@@ -1,6 +1,5 @@
 class TasksController < ApplicationController
-    before_action :find_task, only: [:show, :edit]
-
+    before_action :find_task, only: [:show, :edit, :update]
 
     def index
         @tasks = Task.all
@@ -11,14 +10,13 @@ class TasksController < ApplicationController
     end
 
     def show
-
+      
     end
 
     def create
         @task = Task.new(task_params)
-        if @task.valid?
-            @task.save
-            redirect_to tasks_path
+        if @task.save
+            redirect_to list_path(@task.list)
         else
             render :new
         end
@@ -29,17 +27,18 @@ class TasksController < ApplicationController
     end
 
     def edit 
-
+        redirect_to list_path(@task.list)
     end
 
     private
 
     def find_task
+      
         @task = Task.find(params[:id])
     end
 
     def task_params
-        params.require(:task).permit(:name, :description)
+        params.require(:task).permit(:name, :description, :start_time, :end_time, :start_date, :end_date, :list_id)
     end
 
 end

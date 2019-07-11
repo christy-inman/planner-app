@@ -1,5 +1,5 @@
 class ListsController < ApplicationController
-    before_action :find_list, only: [:show, :edit, :update]
+    before_action :find_list, only: [:show, :edit, :update, :destroy]
 
     def index
         @lists = List.all
@@ -10,8 +10,13 @@ class ListsController < ApplicationController
     end
 
     def create
-        @list = List.create(list_params)
-        redirect_to lists_index
+        @list = List.new(list_params)
+        if @list.save
+            redirect_to lists_path
+        else
+            render :new
+        end
+
     end
 
     def update
@@ -24,15 +29,20 @@ class ListsController < ApplicationController
     def show
     end
 
+    def destroy
+        redirect_to lists_path
+    end
+
 
     private
 
     def find_list
+        
         @list = List.find(params[:id])
     end
 
     def list_params
-        params.require(:list).permit(:title, :task_id, :start_time, :end_time, :start_date, :end_date)
+        params.require(:list).permit(:title)
     end
     
 end

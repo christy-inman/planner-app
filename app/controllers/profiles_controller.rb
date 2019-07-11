@@ -7,9 +7,6 @@ class ProfilesController < ApplicationController
     def show
     end
 
-    def edit 
-    end
-
     def destroy
         @current_user.delete
         session[:user_id] = nil

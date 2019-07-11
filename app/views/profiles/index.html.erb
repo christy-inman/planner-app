@@ -1,8 +1,11 @@
 <h1>Your Profile</h1>
 
 <%#= button_to "Create a New List", new_list_path, method: :get %>
+<br>
 <%#= button_to "View Current Lists", lists_path, method: :get %>
+<br>
 <%#= button_to "View Full Schedule", schedule_path, method: :get %>
+<br>
 <%= button_to "See Your Usage Stats", profile_path(@current_user), method: :get %>
 <br>
 <%= button_to "Logout of Your Profile", sessions_destroy_path(@current_user), method: :delete %>

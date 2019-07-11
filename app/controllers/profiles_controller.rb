@@ -11,6 +11,9 @@ class ProfilesController < ApplicationController
     end
 
     def destroy
+        @current_user.delete
+        session[:user_id] = nil
+        redirect_to users_path
     end
 
 end

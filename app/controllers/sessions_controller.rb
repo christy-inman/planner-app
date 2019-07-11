@@ -15,6 +15,7 @@ class SessionsController < ApplicationController
       redirect_to profiles_path
     else
       flash.now.alert = "Invalid Login"
+      @user = User.new
       render :login
     end
   end

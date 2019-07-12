@@ -31,10 +31,8 @@ ActiveRecord::Schema.define(version: 2019_07_10_230040) do
   create_table "tasks", force: :cascade do |t|
     t.string "name"
     t.string "description"
-    t.time "start_time"
-    t.time "end_time"
-    t.date "start_date"
-    t.date "end_date"
+    t.datetime "start_time"
+    t.datetime "end_time"
     t.bigint "list_id"
     t.index ["list_id"], name: "index_tasks_on_list_id"
   end

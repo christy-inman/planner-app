@@ -11,6 +11,7 @@ class UsersController < ApplicationController
     if @user.save
       session[:user_id] = @user.id
       flash[:notice] = "Success! You created a new profile."
+      Profile.create(user: @user)
       redirect_to profiles_path
     else
       flash.now.alert = "Invalid entry."

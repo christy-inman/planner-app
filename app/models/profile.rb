@@ -6,6 +6,6 @@ class Profile < ApplicationRecord
     end
 
     def avg_tasks
-        Task.count / List.count
+       Task.count / List.count
     end
 end

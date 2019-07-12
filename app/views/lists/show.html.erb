@@ -11,5 +11,6 @@
         <% end %>
 
         <%= button_to "Create task", new_task_path, method: :get  %>
+        <%= button_to "Delete List", list_path(@list), method: :delete  %>
     </div>
 </div>

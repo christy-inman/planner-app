@@ -8,6 +8,7 @@ class ProfilesController < ApplicationController
     end
 
     def destroy
+        @user.profile.delete
         @user.delete
         session[:user_id] = nil
         redirect_to users_path

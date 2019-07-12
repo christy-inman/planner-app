@@ -1,6 +1,6 @@
 class Profile < ApplicationRecord
     belongs_to :user
-    # has_many :lists
+    
 
     def num_lists
         List.count

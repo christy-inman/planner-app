@@ -31,6 +31,8 @@ class ListsController < ApplicationController
     end
 
     def destroy
+        @list.tasks.each{|task| task.delete}
+        @list.delete
         redirect_to lists_path
     end
 

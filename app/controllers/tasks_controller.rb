@@ -31,6 +31,9 @@ class TasksController < ApplicationController
         redirect_to list_path(@task.list)
     end
 
+    def destroy   
+    end
+
     private
 
     def find_task

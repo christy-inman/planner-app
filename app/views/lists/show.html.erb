@@ -2,9 +2,8 @@
     <div class="cardContent">
         <h1><%= @list.title %></h1> 
 
-        <% @list.tasks.each do |task| %>
-        <p> <input type= "checkbox" >
-        
+        <p><% @list.tasks.each do |task| %>
+        <input type= "checkbox" >
         <strong><%= task.name %></strong><br>
 
             <span style="padding-left:2em"> 

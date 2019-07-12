@@ -1,7 +1,9 @@
-<%= link_to "Home Page", users_path %>
-<% if @user && @user.id %>
-    <%= link_to "Profile", profiles_path %>
-    <%= link_to "Logout", sessions_destroy_path(@current_user), method: :delete %>
-<% else %>
-    <%= link_to "Log In", sessions_login_path %>
-<% end %>
+<div id="nav_bar">
+    <%= button_to "Home Page", users_path, method: :get %>
+    <% if @user && @user.id %>
+        <%= button_to "Profile", profiles_path, method: :get %>
+        <%= button_to "Logout", sessions_destroy_path(@current_user), method: :delete %>
+    <% else %>
+        <%= button_to "Log In", sessions_login_path, method: :get %>
+    <% end %>
+</div>

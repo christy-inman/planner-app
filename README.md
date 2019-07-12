@@ -23,8 +23,8 @@ Also, thanks to the two bloggers linked below for sharing knowledge that helped 
   
 ### Contributers
 Angela Ellis 
-  - github.com/JangmiTokki
+  - https://www.github.com/JangmiTokki
   
 Christy Inman
-  - github.com/christyinman
+  - https://www.github.com/christyinman
 

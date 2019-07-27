@@ -26,5 +26,5 @@ Angela Ellis
   - https://www.github.com/JangmiTokki
   
 Christy Inman
-  - https://www.github.com/christyinman
+  - https://www.github.com/christy-inman
 
